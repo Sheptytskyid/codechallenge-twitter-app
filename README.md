@@ -11,11 +11,11 @@ As per the requirement users registration is automatic and no security restricti
 
 ## API endpoints
 
-**Method GET: /user/{userId1}/follow/{userId2}** - request for userId1 to follow userId2;
-**Method GET: /user/{userId1}/unfollow/{userId2}** - request for userId1 to unfollow userId2;
-**Method GET: /tweet/by/{userId}** - show tweets of a single userId;
-**Method GET: /tweet/for/{userId}** - show tweets of all users followed by userId;
-**Method POST: /tweet/** - add a new tweet. Object schema is listed below. Content-Type: application/json.
+* **Method GET: /user/{userId1}/follow/{userId2}** - request for userId1 to follow userId2;
+* **Method GET: /user/{userId1}/unfollow/{userId2}** - request for userId1 to unfollow userId2;
+* **Method GET: /tweet/by/{userId}** - show tweets of a single userId;
+* **Method GET: /tweet/for/{userId}** - show tweets of all users followed by userId;
+* **Method POST: /tweet/** - add a new tweet. Object schema is listed below. Content-Type: application/json.
 Object schema:
 ```json
 {
