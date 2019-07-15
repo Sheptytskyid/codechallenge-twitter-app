@@ -1,8 +1,8 @@
 package com.codechallenge.twitterapp.controller;
 
 import com.codechallenge.twitterapp.dto.TweetDto;
-import com.codechallenge.twitterapp.exception.InvalidUserRequestException;
 import com.codechallenge.twitterapp.exception.InvalidTweetRequestException;
+import com.codechallenge.twitterapp.exception.InvalidUserRequestException;
 import com.codechallenge.twitterapp.model.Tweet;
 import com.codechallenge.twitterapp.service.TweetService;
 import org.slf4j.Logger;
@@ -47,7 +47,7 @@ public class TweetController {
 
     @GetMapping("/by/{userId}")
     public ResponseEntity<List<Tweet>> findTweetsOfUser(@PathVariable("userId") Long userId) {
-        try{
+        try {
             LOG.debug("Finding tweets of userId: " + userId);
             List<Tweet> tweets = tweetService.findTweetsOfUser(userId);
             return new ResponseEntity<>(tweets, HttpStatus.OK);

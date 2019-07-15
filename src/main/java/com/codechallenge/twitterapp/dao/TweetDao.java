@@ -12,5 +12,6 @@ import java.util.Set;
 public interface TweetDao extends JpaRepository<Tweet, Long> {
 
     List<Tweet> findByAuthorOrderByTimeStampDesc(User author);
+
     List<Tweet> findByAuthorIdInOrderByTimeStampDesc(Set<Long> authors);
 }

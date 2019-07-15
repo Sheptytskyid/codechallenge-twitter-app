@@ -29,7 +29,8 @@ public class UserController {
     }
 
     @GetMapping("/{userId1}/follow/{userId2}")
-    public ResponseEntity<String> followUser(@PathVariable("userId1") long userId1, @PathVariable("userId2") long userId2) {
+    public ResponseEntity<String> followUser(@PathVariable("userId1") long userId1,
+                                             @PathVariable("userId2") long userId2) {
         try {
             LOG.debug(format("Executing request of userId %d to follow userId %d", userId1, userId2));
             UserConnectionDto followRequest = new UserConnectionDto(userId1, userId2);
@@ -43,7 +44,8 @@ public class UserController {
     }
 
     @GetMapping("/{userId1}/unfollow/{userId2}")
-    public ResponseEntity<String> unFollowUser(@PathVariable("userId1") long userId1, @PathVariable("userId2") long userId2) {
+    public ResponseEntity<String> unFollowUser(@PathVariable("userId1") long userId1,
+                                               @PathVariable("userId2") long userId2) {
         try {
             LOG.debug(format("Executing request of userId %d to unfollow userId %d", userId1, userId2));
             UserConnectionDto followRequest = new UserConnectionDto(userId1, userId2);

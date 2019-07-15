@@ -1,9 +1,9 @@
 package com.codechallenge.twitterapp.service;
 
 import com.codechallenge.twitterapp.dao.UserDao;
+import com.codechallenge.twitterapp.dto.UserConnectionDto;
 import com.codechallenge.twitterapp.exception.InvalidUserRequestException;
 import com.codechallenge.twitterapp.model.User;
-import com.codechallenge.twitterapp.dto.UserConnectionDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ public class UserProcessor implements UserService {
         User followedUser = findOrCreateUser(request.getFollowedUserId());
         mainUser.getFollowingIds().add(followedUser.getId());
         userDao.save(mainUser);
-        LOG.debug(format("UserId %d followed userId %d", request.getPrimaryUserId(), request.getFollowedUserId() ));
+        LOG.debug(format("UserId %d followed userId %d", request.getPrimaryUserId(), request.getFollowedUserId()));
     }
 
     @Override
@@ -43,7 +43,7 @@ public class UserProcessor implements UserService {
         User followedUser = findOrCreateUser(request.getFollowedUserId());
         mainUser.getFollowingIds().remove(followedUser.getId());
         userDao.save(mainUser);
-        LOG.debug(format("UserId %d unfollowed userId %d", request.getPrimaryUserId(), request.getFollowedUserId() ));
+        LOG.debug(format("UserId %d unfollowed userId %d", request.getPrimaryUserId(), request.getFollowedUserId()));
     }
 
     @Override
