@@ -36,3 +36,6 @@ Object schema:
 }
 ```
 Example: { "userId": 1, "text": "Hello world!"}
+
+## Technologies
+Java 11, Spring Boot 2.2.0, h2 database, lombok, Cucumber
