@@ -9,5 +9,5 @@ import org.junit.runner.RunWith;
         features = "classpath:features",
         plugin = {"pretty"}
 )
-public class CucumberTestsRunner {
+public class RunCucumberTest {
 }
